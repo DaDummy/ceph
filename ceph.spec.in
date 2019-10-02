@@ -905,12 +905,12 @@ cmake .. \
     -DCMAKE_INSTALL_DOCDIR=%{_docdir}/ceph \
     -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir} \
     -DWITH_MANPAGE=ON \
-    -DWITH_PYTHON3=ON \
     -DWITH_MGR_DASHBOARD_FRONTEND=OFF \
 %if %{with python2}
     -DWITH_PYTHON2=ON \
 %else
     -DWITH_PYTHON2=OFF \
+    -DWITH_PYTHON3=ON \
     -DMGR_PYTHON_VERSION=3 \
 %endif
 %if 0%{?rhel} && ! 0%{?centos}
