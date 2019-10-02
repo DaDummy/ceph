@@ -193,7 +193,15 @@ BuildRequires:  lsb-release
 BuildRequires:  openldap2-devel
 BuildRequires:  cunit-devel
 BuildRequires:	python%{_python_buildid}-base
+%if 0%{?centos} == 7
+%if 0%{_python_buildid} == 3
+BuildRequires:	python36-Cython
+%else
+BuildRequires:	python2-Cython
+%endif
+%else
 BuildRequires:	python%{_python_buildid}-Cython
+%endif
 BuildRequires:	python%{_python_buildid}-PrettyTable
 BuildRequires:	python%{_python_buildid}-Sphinx
 BuildRequires:  rdma-core-devel
